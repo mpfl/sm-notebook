@@ -18,7 +18,7 @@ A Jupyter notebook for processing a CSV using the [Software Mentions](https://gi
 ```
 6. Run the containers.
 ```
-~/sm-notebook$Z docker-compose up
+~/sm-notebook$ docker-compose up
 ```
 7. Keep an eye our for the Jupyter notebook URL and visit it in your web browser
 8. In Jupyter, go to the `work` directory, open the notebook and continue following the instructions within.
@@ -28,5 +28,5 @@ A Jupyter notebook for processing a CSV using the [Software Mentions](https://gi
 1. Hit `Ctrl` + `C` in your terminal window.
 2. Clean up the containers
 ```
-$~/sm-notebook docker-compose down
+~/sm-notebook$ docker-compose down
 ````
