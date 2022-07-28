@@ -1,0 +1,22 @@
+version: "2.8"
+services:
+  software-mentions:
+    container_name: sm-software-mentions
+    restart: unless-stopped
+    image: grobid/software-mentions:0.7.1
+    volumes:
+      - ${SM_PATH}/software-mentions/config.yml:/opt/grobid/software-mentions/resources/config/config.yml
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+
+  jupyterlab:
+    image: jupyter/scipy-notebook:latest
+    container_name: sm-jupyterlab
+    volumes:
+      - ${SM_PATH}/jupyter:/home/jovyan/work
+    ports:
+      - 8888:8888
